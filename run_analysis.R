@@ -1,4 +1,12 @@
 
+#
+      Author: Su Fan
+Project Name: 'run_analysis.R'
+       Intro: This R script aims to clean a data set about 
+              wearable computing.
+#
+
+# Set-ups
 if(!file.exists('./coursera/final')){dir.create('./coursera/final')}
 setwd('./coursera/final')
 library(reshape2)
@@ -52,6 +60,4 @@ grmean <- findat %>%
     group_by(Subject, Activity) %>%
     summarise_each(funs(mean))
 write.table(grmean, file = 'meandata.txt',row.name=FALSE)
-
-
 
